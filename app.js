@@ -1,17 +1,34 @@
-//clasName
-//classList
+//createElement ('Element')
+//createTextNode('text content')
+//element.appendChild(childElement) 
 
-const first = document.getElementById('first');//seleciona o elemento
-const classValue = first.className; //obtem a classe dele
-console.log(classValue); //é printado "text"
+const result = document.querySelector('#result'); //seleciona o elemento com id result - a div
+
+const bodyDiv = document.createElement('div'); //cria um elemento vazio
+const text = document.createTextNode('a simple body div'); // cria um textNode
+bodyDiv.appendChild(text); // adiciona o textNode ao elemento criado "bodyDiv"
+document.body.appendChild(bodyDiv); //o bodyDiv criado "gets appended" - é inserido - ao elemento body
+
+//outro exemplo com appendChild
+// const heading = document.createElement('h2'); //cria um elemento vazio
+// const headingText = document.createTextNode('subtitulo criado dinamicamente'); // cria um textNode
+// heading.appendChild(headingText); // adiciona o textNode ao elemento criado
+// heading.classList.add('blue'); //adiciona a classe 'blue' ao elemento criado
+// result.appendChild(heading); //insere o elemento criado como filho do elemento result selecionado la em cima
 
 
-const second = document.getElementById('second');//seleciona o elemento
-second.className = 'colors text'; // é possível adicionar mais de uma classe a um mesmo elemento com o className, mas isso nao é remonedado
+//insertBefore(element, location);
+const first = document.querySelector('.red'); // seleciona o ate entao primeiro elemento da div que tem a classe red
+const heading = document.createElement('h2'); //cria um elemento vazio
+const headingText = document.createTextNode('subtitulo criado dinamicamente'); // cria um textNode
+heading.appendChild(headingText); // adiciona o textNode ao elemento criado
+heading.classList.add('blue'); //adiciona a classe 'blue' ao elemento criado
+result.insertBefore(heading, first); //insere o elemento heading criado antes do elemento assinalado como first "o h1 nesse caso"
 
 
-const third = document.getElementById('third'); //seleciona o elemento
-third.classList.add('text', 'colors'); // melhor solucao para adicionar e modificar classes de um elemento. basta separalos por ","
-third.classList.remove('text'); // para remover uma classe, tbm funciona com multiplas, usando as ","
-let result = third.classList.contains('colors'); //retorna um boolenao com vdd se o elemento em questao tiver a classe passada como argumento
-console.log(result); // printa true
+//replaceChild (new, old)
+const smallHeading = document.createElement('h6'); //cria um h6 vazio
+const smallText = document.createTextNode(`i'm a small heading text`); // cria um text node
+smallHeading.classList.add('red'); //adiciona a classe 'red' ao element
+smallHeading.appendChild(smallText); //adiciona o textNode ao elemento criado
+document.body.replaceChild(smallHeading, bodyDiv); //substitui o bodyDiv criado pelo novo elemento criado h6
