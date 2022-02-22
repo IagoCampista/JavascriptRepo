@@ -1,5 +1,6 @@
-//remove
+//removeChild
 const result = document.querySelector('#result'); //seleciona a div com id = result
-result.remove(); // apaga todo o elemento selecionado (nesse caso a div)
+const heading = result.querySelector('h1'); //seleciona o h1 dentro do result
+result.removeChild(heading); // remove o filho headind do elemento pai result
 
 
