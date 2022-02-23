@@ -1,14 +1,20 @@
-//innerHTML
+//click Event
 
-const list = document.getElementById('first');
-const div = document.getElementById('second');
-const item = document.querySelector('.item');
+let cont = 1;
 
-console.log(list.textContent);
+const h3 = document.createElement('h3');
+h3.textContent = cont;
+document.body.appendChild(h3);
 
-const randomVar = 'random item list';
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', function(){
+    cont ++;
+    h3.textContent = cont; 
+})
 
-const ul = document.createElement('ul'); // cria um elemento ul vazio
-ul.innerHTML = `<li class="item">${randomVar}
-<li>list item 2</li> <li>list item 3</li>`; // edita o html do elemento e usando os backticks podemos ate incluir variaveis
-document.body.appendChild(ul); // adiciona o item criado no final do body 
+function helloWorld() {
+    console.log('hello world');
+}
+
+const btnHello = document.querySelector('.btnHello');
+btnHello.addEventListener('click', helloWorld);
