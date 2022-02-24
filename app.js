@@ -1,20 +1,8 @@
-//click Event
+//currentTarget
+//usado para refernciar o elemento alvo do EventListener
 
-let cont = 1;
+const btn = document.querySelector('.btn'); // seleciona o botao
 
-const h3 = document.createElement('h3');
-h3.textContent = cont;
-document.body.appendChild(h3);
-
-const btn = document.querySelector('.btn');
-btn.addEventListener('click', function(){
-    cont ++;
-    h3.textContent = cont; 
-})
-
-function helloWorld() {
-    console.log('hello world');
-}
-
-const btnHello = document.querySelector('.btnHello');
-btnHello.addEventListener('click', helloWorld);
+btn.addEventListener('click', function(event){ //adiciona o evento como parametro da funcao
+    event.currentTarget.classList.add('title'); // o event.currentTarget é o elemento ao qual o addEventListener foi chamado
+});
