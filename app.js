@@ -1,13 +1,17 @@
-//submit event listener
+//Web Storage API - provided by browser
+// types : sessionStorage , localStorage
+//properties/ methods: setItem, getItem, removeItem, clear
 
-const form = document.getElementById('form');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault(); // pra nao dar refresh na pagina e perder os valores digitados
-    console.log('form submmited');
-    //podemos acessar os valores do form da seguinte maneira usando o .value
-    console.log(email.value); 
-    console.log(password.value);
-});
+//how to set a new item
+localStorage.setItem('friend', 'peter');
+localStorage.setItem('job', 'QA');
+localStorage.setItem('addres', '23 jump street');
+localStorage.setItem('firstName', 'john');
+
+const firstName = localStorage.getItem('firstName'); //get the value from a item
+console.log(firstName);
+localStorage.removeItem('firstName');//remove a item by its keyword
+const anotherName = localStorage.getItem('firstName');
+console.log(anotherName);
+localStorage.clear(); //clear all data stored in local Storage
