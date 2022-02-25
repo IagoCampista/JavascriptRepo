@@ -1,8 +1,13 @@
-//currentTarget
-//usado para refernciar o elemento alvo do EventListener
+//submit event listener
 
-const btn = document.querySelector('.btn'); // seleciona o botao
+const form = document.getElementById('form');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
-btn.addEventListener('click', function(event){ //adiciona o evento como parametro da funcao
-    event.currentTarget.classList.add('title'); // o event.currentTarget é o elemento ao qual o addEventListener foi chamado
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // pra nao dar refresh na pagina e perder os valores digitados
+    console.log('form submmited');
+    //podemos acessar os valores do form da seguinte maneira usando o .value
+    console.log(email.value); 
+    console.log(password.value);
 });
