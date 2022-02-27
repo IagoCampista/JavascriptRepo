@@ -1,17 +1,11 @@
-//Web Storage API - provided by browser
-// types : sessionStorage , localStorage
-//properties/ methods: setItem, getItem, removeItem, clear
+//JSON.stringify() , JSON.parse()
+//usamos para salvar dados que nao sao uma string simples, como nesse caso é um array
 
+const friends = ['john', 'arthur', 'thomas'];
 
-//how to set a new item
-localStorage.setItem('friend', 'peter');
-localStorage.setItem('job', 'QA');
-localStorage.setItem('addres', '23 jump street');
-localStorage.setItem('firstName', 'john');
+localStorage.setItem('friends', JSON.stringify(friends)); //na hora de salvar é preciso uusar o stringfy
 
-const firstName = localStorage.getItem('firstName'); //get the value from a item
-console.log(firstName);
-localStorage.removeItem('firstName');//remove a item by its keyword
-const anotherName = localStorage.getItem('firstName');
-console.log(anotherName);
-localStorage.clear(); //clear all data stored in local Storage
+const values = JSON.parse(localStorage.getItem('friends')); // na hora de acessar o valor é preciso usar o parse
+console.log(values);
+
+//parei em 10:18:11
