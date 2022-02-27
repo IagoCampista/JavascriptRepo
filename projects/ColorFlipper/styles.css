@@ -1,0 +1,6 @@
+nav {
+    background-color: lightgrey;
+    box-shadow: black;
+    display: grid;
+    align-items: center;
+}
