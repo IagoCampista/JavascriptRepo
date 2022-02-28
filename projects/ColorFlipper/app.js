@@ -2,8 +2,6 @@ const colors = ['red', 'green', 'blue', 'grey', 'yellow', 'rgba(123,098,245)', '
 const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
 
-console.log(color);
-
 btn.addEventListener('click', function() {
     let randomNumber = Math.floor(Math.random() *colors.length);
     document.body.style.backgroundColor = colors[randomNumber];
