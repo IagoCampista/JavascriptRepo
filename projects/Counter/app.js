@@ -1,4 +1,4 @@
-/* The way I did it at the first sight
+/* The way I did it at first sight
 
 const decreaseButton = document.getElementById("btn-decrease");
 const resetButton = document.getElementById("btn-reset");
