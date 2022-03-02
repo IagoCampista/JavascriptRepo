@@ -61,7 +61,3 @@ buttons.forEach(function(btn) {
         counterText.textContent = counter; 
     })
 })
-
-
-
-
