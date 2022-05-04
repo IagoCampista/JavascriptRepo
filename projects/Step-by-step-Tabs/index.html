@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step by Step Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="../../index.html">home</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1>Step by Step Form</h1>
+    <form>
+      <div class="steps step1">
+        <label for="cars">Tamanho do Skecth:</label>
+        <select id="size" name="skecth-size">
+          <option value="" disabled selected>Tamanho</option>
+          <option value="A2">A2</option>
+          <option value="A3">A3</option>
+          <option value="A4">A4</option>
+          <option value="A5">A5</option>
+        </select>
+      </div>
+      <div class="steps step2">
+        <label for="step2">Papel do Miolo do Skecth:</label>
+        <select id="paper-type" name="skecth-paper-type">
+          <option value="" disabled selected>Papel do Miolo</option>
+          <option value="Papel Reciclado">Papel Reciclado</option>
+          <option value="Canson">Canson</option>
+          <option value="Papel Dourado">Papel Dourado</option>
+          <option value="Papel Pardo">Papel Pardo</option>
+        </select>
+      </div>
+      <div class="steps step3">
+        <label for="step3">Cor da Capa do Skecth:</label>
+        <select id="cover-color" name="skecth-cover-color">
+          <option value="" disabled selected>Cor da Capa</option>
+          <option value="Preto">Preto</option>
+          <option value="Roxo">Roxo</option>
+          <option value="Dourado">Dourado</option>
+          <option value="Rosa">Rosa</option>
+        </select>
+      </div>
+    </form>
+    <script src="app.js"></script>
+  </body>
+</html>
