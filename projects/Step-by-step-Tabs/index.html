@@ -19,10 +19,10 @@
 
     <h1>Step by Step Form</h1>
 
-    <h3>Saiba como montar seu Cactus</h3>
+    <h3>Etapa Atual: <span id="currentStepText">0</span></h3>
 
     <form>
-      <div class="steps step1">
+      <div class="steps step1 content">
         <label for="size">Tamanho do Skecth:</label>
         <select id="size" name="skecth-size" onChange="update()">
           <option value="" disabled selected>Tamanho</option>
@@ -32,7 +32,7 @@
           <option value="A5">A5</option>
         </select>
       </div>
-      <div class="steps step2">
+      <div class="steps step2 content">
         <label for="paper-type">Papel do Miolo do Skecth:</label>
         <select id="paper-type" name="skecth-paper-type" onChange="update()">
           <option value="" disabled selected>Papel do Miolo</option>
@@ -42,7 +42,7 @@
           <option value="Papel Pardo">Papel Pardo</option>
         </select>
       </div>
-      <div class="steps step3">
+      <div class="steps step3 content">
         <label for="cover-color">Cor da Capa do Skecth:</label>
         <select id="cover-color" name="skecth-cover-color" onChange="update()">
           <option value="" disabled selected>Cor da Capa</option>
@@ -53,6 +53,9 @@
         </select>
       </div>
     </form>
+
+    <button class="btn previous">Etapa Anterior</button>
+    <button class="btn next">Próxima Etapa</button>
 
     <h3>Parametros Selecionados</h3>
     <ul>
