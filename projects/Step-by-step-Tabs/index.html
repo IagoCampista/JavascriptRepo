@@ -23,8 +23,8 @@
 
     <form>
       <div class="steps step1">
-        <label for="step1">Tamanho do Skecth:</label>
-        <select id="size" name="skecth-size">
+        <label for="size">Tamanho do Skecth:</label>
+        <select id="size" name="skecth-size" onChange="update()">
           <option value="" disabled selected>Tamanho</option>
           <option value="A2">A2</option>
           <option value="A3">A3</option>
@@ -33,8 +33,8 @@
         </select>
       </div>
       <div class="steps step2">
-        <label for="step2">Papel do Miolo do Skecth:</label>
-        <select id="paper-type" name="skecth-paper-type">
+        <label for="paper-type">Papel do Miolo do Skecth:</label>
+        <select id="paper-type" name="skecth-paper-type" onChange="update()">
           <option value="" disabled selected>Papel do Miolo</option>
           <option value="Papel Reciclado">Papel Reciclado</option>
           <option value="Canson">Canson</option>
@@ -43,8 +43,8 @@
         </select>
       </div>
       <div class="steps step3">
-        <label for="step3">Cor da Capa do Skecth:</label>
-        <select id="cover-color" name="skecth-cover-color">
+        <label for="cover-color">Cor da Capa do Skecth:</label>
+        <select id="cover-color" name="skecth-cover-color" onChange="update()">
           <option value="" disabled selected>Cor da Capa</option>
           <option value="Preto">Preto</option>
           <option value="Roxo">Roxo</option>
@@ -53,11 +53,12 @@
         </select>
       </div>
     </form>
+
     <h3>Parametros Selecionados</h3>
     <ul>
-      <li>Tamanho: <span class="size">^-^</span></li>
-      <li>Papel: <span class="paper-type">^-^</span></li>
-      <li>Cor: <span class="cover-color">^-^</span></li>
+      <li>Tamanho: <span id="selected-size">^-^</span></li>
+      <li>Papel: <span id="selected-paper-type">^-^</span></li>
+      <li>Cor: <span id="selected-cover-color">^-^</span></li>
     </ul>
     <script src="app.js"></script>
   </body>
