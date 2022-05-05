@@ -1,4 +1,6 @@
 //Atualiza o Resumo no final da pagina
+// se for mudar para mostrar so no ulimo passo: tirar o "onChange" de cada select
+// e chamar a funcao update() somente no switch case:4
 function update() {
   // size
   const size = document.getElementById("size");
@@ -44,36 +46,85 @@ buttons.forEach(function (btn) {
       stepCounter = 0;
     }
 
-    if (stepCounter > 3) {
-      stepCounter = 3;
-    } else if (stepCounter < 1) {
-      stepCounter = 1;
+    if (stepCounter > 4) {
+      stepCounter = 4;
+    } else if (stepCounter < 0) {
+      stepCounter = 0;
     }
 
-    if (stepCounter == 1) {
-      // mostra a div do passo 1
-      steps.forEach(function (step) {
-        step.classList.remove("active");
-        if (step.classList.contains("step1")) {
-          step.classList.add("active");
-        }
-      });
-    } else if (stepCounter == 2) {
-      steps.forEach(function (step) {
-        step.classList.remove("active");
-        if (step.classList.contains("step2")) {
-          step.classList.add("active");
-        }
-      });
-    } else if (stepCounter == 3) {
-      steps.forEach(function (step) {
-        step.classList.remove("active");
-        if (step.classList.contains("step3")) {
-          step.classList.add("active");
-        }
-      });
+    switch (stepCounter) {
+      case 0:
+        steps.forEach(function (step) {
+          // esconde todas as outras divs
+          step.classList.remove("active");
+          if (step.classList.contains("step0")) {
+            // mostra a div do passo 1
+            step.classList.add("active");
+          }
+        });
+        break;
+      case 1:
+        steps.forEach(function (step) {
+          // esconde todas as outras divs
+          step.classList.remove("active");
+          if (step.classList.contains("step1")) {
+            // mostra a div do passo 1
+            step.classList.add("active");
+          }
+        });
+        break;
+      case 2:
+        steps.forEach(function (step) {
+          step.classList.remove("active");
+          if (step.classList.contains("step2")) {
+            step.classList.add("active");
+          }
+        });
+        break;
+      case 3:
+        steps.forEach(function (step) {
+          step.classList.remove("active");
+          if (step.classList.contains("step3")) {
+            step.classList.add("active");
+          }
+        });
+        break;
+      case 4:
+        steps.forEach(function (step) {
+          step.classList.remove("active");
+          if (step.classList.contains("step4")) {
+            step.classList.add("active");
+          }
+        });
+        break;
     }
 
     currentStepText.textContent = stepCounter;
   });
 });
+
+// usando if - pensei assim antes mas estava com muitos if- troquei para um swtich case
+// if (stepCounter == 1) {
+//             steps.forEach(function (step) {
+//               // esconde todas as outras divs
+//               step.classList.remove("active");
+//               if (step.classList.contains("step1")) {
+//                 // mostra a div do passo 1
+//                 step.classList.add("active");
+//               }
+//             });
+//     } else if (stepCounter == 2) {
+//             steps.forEach(function (step) {
+//               step.classList.remove("active");
+//               if (step.classList.contains("step2")) {
+//                 step.classList.add("active");
+//               }
+//             });
+//     } else if (stepCounter == 3) {
+//       steps.forEach(function (step) {
+//         step.classList.remove("active");
+//         if (step.classList.contains("step3")) {
+//           step.classList.add("active");
+//         }
+//       });
+//     }
