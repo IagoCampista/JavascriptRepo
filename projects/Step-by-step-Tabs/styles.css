@@ -14,9 +14,24 @@
   display: block;
 }
 /* colors */
+.red {
+  background: lightsalmon;
+}
 .blue{
   background: lightblue;
 }
-.red{
-  background: lightsalmon;
+
+#steps-indicator{
+  margin: auto;
+  width: 90vh;
+  display: flex;
+  justify-content: space-around;
+
+ 
 }
+.stepTitle{
+  padding: 0 30px;
+  border-radius: 10px;
+  
+}
+

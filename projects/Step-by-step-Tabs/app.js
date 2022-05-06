@@ -1,7 +1,7 @@
 //Atualiza o Resumo no final da pagina
 // se for mudar para mostrar so no ulimo passo: tirar o "onChange" de cada select
 // e chamar a funcao update() somente no switch case:4
-function update() {
+function updateSummary() {
   // size
   const size = document.getElementById("size");
   let selectedSizeText = size.options[size.selectedIndex].text;
@@ -25,8 +25,6 @@ function update() {
   coverColorPreview.textContent = selectedCoverColorText;
 }
 
-update();
-
 // Cria controle de Etapas
 let stepCounter = 0;
 const currentStepText = document.getElementById("currentStepText");
@@ -44,9 +42,6 @@ buttons.forEach(function (btn) {
       stepCounter++;
     }
 
-    // refazer o hide/show dos botoes, assim nao esta dando certo
-    // assim ele só consegue ver o botao que for clicado
-
     switch (stepCounter) {
       case 0:
         steps.forEach(function (step) {
@@ -59,6 +54,8 @@ buttons.forEach(function (btn) {
         });
         break;
       case 1:
+        updateTitle(stepCounter);
+
         steps.forEach(function (step) {
           // esconde todas as outras divs
           step.classList.remove("active");
@@ -85,7 +82,7 @@ buttons.forEach(function (btn) {
         });
         break;
       case 4:
-        update();
+        updateSummary();
         steps.forEach(function (step) {
           step.classList.remove("active");
           if (step.classList.contains("step4")) {
@@ -102,3 +99,32 @@ buttons.forEach(function (btn) {
     currentStepText.textContent = stepCounter;
   });
 });
+
+const stepsTitles = document.getElementById("steps-indicator");
+console.log(stepsTitles);
+let eachStepTitle = stepsTitles.childNodes;
+console.log(eachStepTitle);
+
+function updateTitle(stepCounter) {
+  switch (stepCounter) {
+    case 0:
+      break;
+    case 1:
+      // stepsTitles.forEach(function (stepTitle) {
+      //   // stepTitle.classList.remove("blue");
+      //   if (stepTitle.classList.contains("title1")) {
+      //     console.log(stepTitle);
+      //     stepTitle.classList.add("blue");
+      //   }
+      // });
+      break;
+    case 2:
+      console.log(oi);
+      break;
+    case 3:
+      break;
+    case 4:
+      break;
+    default:
+  }
+}
