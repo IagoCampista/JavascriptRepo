@@ -49,12 +49,6 @@ buttons.forEach(function (btn) {
 
     switch (stepCounter) {
       case 0:
-        if (btn.classList.contains("previous")) {
-          btn.classList.add("content");
-        } else if (btn.classList.contains("next")) {
-          btn.classList.remove("content");
-          btn.classList.add("active");
-        }
         steps.forEach(function (step) {
           // esconde todas as outras divs
           step.classList.remove("active");
@@ -65,13 +59,6 @@ buttons.forEach(function (btn) {
         });
         break;
       case 1:
-        console.log("etapa 1");
-        console.log("classes do btn anterior " + btn.classList);
-        if (btn.classList.contains("previous")) {
-          console.log("classes do btn anterior " + btn.classList);
-          btn.classList.add("active");
-          btn.classList.remove("content");
-        }
         steps.forEach(function (step) {
           // esconde todas as outras divs
           step.classList.remove("active");
@@ -98,14 +85,7 @@ buttons.forEach(function (btn) {
         });
         break;
       case 4:
-        if (btn.classList.contains("next")) {
-          btn.classList.remove("active");
-        } else if (btn.classList.contains("previous")) {
-          btn.classList.remove("content");
-          btn.classList.add("active");
-        }
-        console.log("final");
-
+        update();
         steps.forEach(function (step) {
           step.classList.remove("active");
           if (step.classList.contains("step4")) {

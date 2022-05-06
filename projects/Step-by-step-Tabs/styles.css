@@ -1,5 +1,6 @@
 .steps{
   padding: 30px;
+  min-height: 200px;
 }
 
 /* hide content */

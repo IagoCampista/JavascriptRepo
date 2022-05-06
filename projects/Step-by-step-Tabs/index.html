@@ -28,7 +28,7 @@
     <form>
       <div class="steps step1 content">
         <label for="size">Tamanho do Skecth:</label>
-        <select id="size" name="skecth-size" onChange="update()">
+        <select id="size" name="skecth-size">
           <option value="" disabled selected>Tamanho</option>
           <option value="A2">A2</option>
           <option value="A3">A3</option>
@@ -38,7 +38,7 @@
       </div>
       <div class="steps step2 content">
         <label for="paper-type">Papel do Miolo do Skecth:</label>
-        <select id="paper-type" name="skecth-paper-type" onChange="update()">
+        <select id="paper-type" name="skecth-paper-type">
           <option value="" disabled selected>Papel do Miolo</option>
           <option value="Papel Reciclado">Papel Reciclado</option>
           <option value="Canson">Canson</option>
@@ -48,7 +48,7 @@
       </div>
       <div class="steps step3 content">
         <label for="cover-color">Cor da Capa do Skecth:</label>
-        <select id="cover-color" name="skecth-cover-color" onChange="update()">
+        <select id="cover-color" name="skecth-cover-color">
           <option value="" disabled selected>Cor da Capa</option>
           <option value="Preto">Preto</option>
           <option value="Roxo">Roxo</option>
@@ -58,23 +58,23 @@
       </div>
       <div class="steps step4 content">
         <h4>Resumo</h4>
-        <!-- <ul>
+        <ul>
           <li>Tamanho: <span id="selected-size">^-^</span></li>
           <li>Papel: <span id="selected-paper-type">^-^</span></li>
           <li>Cor: <span id="selected-cover-color">^-^</span></li>
-        </ul> -->
+        </ul>
       </div>
     </form>
 
-    <button class="btn previous content">Etapa Anterior</button>
-    <button class="btn next content active">Próxima Etapa</button>
+    <button class="btn previous">Etapa Anterior</button>
+    <button class="btn next">Próxima Etapa</button>
 
-    <h3>Parametros Selecionados</h3>
+    <!-- <h3>Parametros Selecionados</h3>
     <ul>
       <li>Tamanho: <span id="selected-size">^-^</span></li>
       <li>Papel: <span id="selected-paper-type">^-^</span></li>
       <li>Cor: <span id="selected-cover-color">^-^</span></li>
-    </ul>
+    </ul> -->
     <script src="app.js"></script>
   </body>
 </html>
