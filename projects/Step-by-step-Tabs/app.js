@@ -1,6 +1,4 @@
-//Atualiza o Resumo no final da pagina
-// se for mudar para mostrar so no ulimo passo: tirar o "onChange" de cada select
-// e chamar a funcao update() somente no switch case:4
+//Atualiza o Resumo no último passo
 function updateSummary() {
   // size
   const size = document.getElementById("size");
@@ -33,6 +31,7 @@ const currentStepText = document.getElementById("currentStepText");
 const steps = document.querySelectorAll(".steps");
 
 const buttons = document.querySelectorAll(".btn");
+
 buttons.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
     const buttonType = e.currentTarget.classList;
@@ -44,6 +43,8 @@ buttons.forEach(function (btn) {
 
     switch (stepCounter) {
       case 0:
+        updateTitle(stepCounter);
+
         steps.forEach(function (step) {
           // esconde todas as outras divs
           step.classList.remove("active");
@@ -66,6 +67,8 @@ buttons.forEach(function (btn) {
         });
         break;
       case 2:
+        updateTitle(stepCounter);
+
         steps.forEach(function (step) {
           step.classList.remove("active");
           if (step.classList.contains("step2")) {
@@ -74,6 +77,8 @@ buttons.forEach(function (btn) {
         });
         break;
       case 3:
+        updateTitle(stepCounter);
+
         steps.forEach(function (step) {
           step.classList.remove("active");
           if (step.classList.contains("step3")) {
@@ -82,7 +87,10 @@ buttons.forEach(function (btn) {
         });
         break;
       case 4:
+        updateTitle(stepCounter);
+
         updateSummary();
+
         steps.forEach(function (step) {
           step.classList.remove("active");
           if (step.classList.contains("step4")) {
@@ -100,30 +108,46 @@ buttons.forEach(function (btn) {
   });
 });
 
-const stepsTitles = document.getElementById("steps-indicator");
-console.log(stepsTitles);
-let eachStepTitle = stepsTitles.childNodes;
-console.log(eachStepTitle);
+const stepsTitles = document.querySelectorAll(".stepTitle");
 
 function updateTitle(stepCounter) {
   switch (stepCounter) {
     case 0:
+      stepsTitles.forEach(function (step) {
+        step.classList.remove("blue");
+      });
       break;
     case 1:
-      // stepsTitles.forEach(function (stepTitle) {
-      //   // stepTitle.classList.remove("blue");
-      //   if (stepTitle.classList.contains("title1")) {
-      //     console.log(stepTitle);
-      //     stepTitle.classList.add("blue");
-      //   }
-      // });
+      stepsTitles.forEach(function (step) {
+        step.classList.remove("blue");
+        if (step.classList.contains("title1")) {
+          step.classList.add("blue");
+        }
+      });
       break;
     case 2:
-      console.log(oi);
+      stepsTitles.forEach(function (step) {
+        step.classList.remove("blue");
+        if (step.classList.contains("title2")) {
+          step.classList.add("blue");
+        }
+      });
       break;
     case 3:
+      stepsTitles.forEach(function (step) {
+        step.classList.remove("blue");
+        if (step.classList.contains("title3")) {
+          step.classList.add("blue");
+        }
+      });
       break;
     case 4:
+      stepsTitles.forEach(function (step) {
+        step.classList.remove("blue");
+        if (step.classList.contains("title4")) {
+          step.classList.add("blue");
+        }
+      });
       break;
     default:
   }

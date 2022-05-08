@@ -17,6 +17,7 @@
 .red {
   background: lightsalmon;
 }
+/* blue tem que estar depois se este for o que depender da etapa */
 .blue{
   background: lightblue;
 }
