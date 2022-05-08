@@ -110,6 +110,8 @@ buttons.forEach(function (btn) {
 
 const stepsTitles = document.querySelectorAll(".stepTitle");
 
+console.log(document.querySelector(".stepTitle:nth-child(2)"));
+
 function updateTitle(stepCounter) {
   switch (stepCounter) {
     case 0:
@@ -118,36 +120,60 @@ function updateTitle(stepCounter) {
       });
       break;
     case 1:
-      stepsTitles.forEach(function (step) {
-        step.classList.remove("blue");
-        if (step.classList.contains("title1")) {
-          step.classList.add("blue");
-        }
-      });
+      document
+        .querySelector(".stepTitle:nth-child(2)")
+        .classList.remove("blue");
+      document.querySelector(".stepTitle:nth-child(1)").classList.add("blue");
+      // stepsTitles.forEach(function (step) {
+      //   step.classList.remove("blue");
+      //   if (step.classList.contains("title1")) {
+      //     step.classList.add("blue");
+      //   }
+      // });
       break;
     case 2:
-      stepsTitles.forEach(function (step) {
-        step.classList.remove("blue");
-        if (step.classList.contains("title2")) {
-          step.classList.add("blue");
-        }
-      });
+      document
+        .querySelector(".stepTitle:nth-child(3)")
+        .classList.remove("blue");
+      document
+        .querySelector(".stepTitle:nth-child(1)")
+        .classList.remove("blue");
+      document.querySelector(".stepTitle:nth-child(2)").classList.add("blue");
+      // stepsTitles.forEach(function (step) {
+      //   step.classList.remove("blue");
+      //   if (step.classList.contains("title2")) {
+      //     step.classList.add("blue");
+      //   }
+      // });
       break;
     case 3:
-      stepsTitles.forEach(function (step) {
-        step.classList.remove("blue");
-        if (step.classList.contains("title3")) {
-          step.classList.add("blue");
-        }
-      });
+      document
+        .querySelector(".stepTitle:nth-child(2)")
+        .classList.remove("blue");
+      document
+        .querySelector(".stepTitle:nth-child(4)")
+        .classList.remove("blue");
+      document.querySelector(".stepTitle:nth-child(3)").classList.add("blue");
+
+      // stepsTitles.forEach(function (step) {
+      //   step.classList.remove("blue");
+      //   if (step.classList.contains("title3")) {
+      //     step.classList.add("blue");
+      //   }
+      // });
       break;
     case 4:
-      stepsTitles.forEach(function (step) {
-        step.classList.remove("blue");
-        if (step.classList.contains("title4")) {
-          step.classList.add("blue");
-        }
-      });
+      document
+        .querySelector(".stepTitle:nth-child(3)")
+        .classList.remove("blue");
+      document.querySelector(".stepTitle:nth-child(4)").classList.add("blue");
+
+      // stepsTitles.forEach(function (step) {
+      //   step.classList.remove("blue");
+      //   if (step.classList.contains("title4")) {
+      //     step.classList.add("blue");
+      //   }
+      // });
       break;
     default:
   }
