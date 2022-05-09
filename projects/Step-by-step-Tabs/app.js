@@ -148,12 +148,18 @@ function updateTitle(stepCounter) {
         .querySelector(".stepTitle:nth-child(4)")
         .classList.remove("blue");
       document.querySelector(".stepTitle:nth-child(3)").classList.add("blue");
+
+      // muda de volta o texto de avançar se o usuario chegou ate o final e voltou
+      document.querySelector(".btn.next").textContent = "Próxima Etapa";
       break;
     case 4:
       document
         .querySelector(".stepTitle:nth-child(3)")
         .classList.remove("blue");
       document.querySelector(".stepTitle:nth-child(4)").classList.add("blue");
+
+      //muda o texto do botao na ultima etapa
+      document.querySelector(".btn.next").textContent = "Finalizar Pedido";
       break;
     default:
   }
