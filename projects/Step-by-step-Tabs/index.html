@@ -43,6 +43,46 @@
         </select>
       </div>
       <div class="steps step2 content">
+        <p>Quantos papeis diferentes deseja ter no seu sketch?</p>
+        <input
+          type="radio"
+          id="qtd-1"
+          value="1"
+          name="diff-paper-amount"
+          onchange="updateDiffPapers(this.value);"
+        />
+        <label for="qtd-1">1</label>
+        <input
+          type="radio"
+          id="qtd-2"
+          value="2"
+          name="diff-paper-amount"
+          onchange="updateDiffPapers(this.value);"
+        />
+        <label for="qtd-1">2</label>
+        <input
+          type="radio"
+          id="qtd-3"
+          value="3"
+          name="diff-paper-amount"
+          onchange="updateDiffPapers(this.value);"
+        />
+        <label for="qtd-1">3</label>
+        <input
+          type="radio"
+          id="qtd-4"
+          value="4"
+          name="diff-paper-amount"
+          onchange="updateDiffPapers(this.value);"
+        />
+        <label for="qtd-1">4</label>
+        <br />
+        <p>
+          Quantidade de papeis diferentes selecionados:
+          <span id="paper-amount-indicator"></span>
+        </p>
+        <br />
+
         <label for="paper-type">Papel do Miolo do Skecth:</label>
         <select id="paper-type" name="skecth-paper-type">
           <option value="" disabled selected>Papel do Miolo</option>

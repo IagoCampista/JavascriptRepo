@@ -110,9 +110,6 @@ buttons.forEach(function (btn) {
 
 const stepsTitles = document.querySelectorAll(".stepTitle");
 
-console.log(document.querySelector(".btn.previous"));
-console.log(buttons);
-
 function updateTitle(stepCounter) {
   switch (stepCounter) {
     case 0:
@@ -163,6 +160,11 @@ function updateTitle(stepCounter) {
       break;
     default:
   }
+}
+let diffPapersAmount = 0;
+function updateDiffPapers(diffPapersAmount) {
+  document.getElementById("paper-amount-indicator").textContent =
+    diffPapersAmount;
 }
 
 // updateTitle usando forEach em todas as ocasiões
