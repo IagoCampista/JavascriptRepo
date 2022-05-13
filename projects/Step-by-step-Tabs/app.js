@@ -17,19 +17,7 @@ function updateSummary() {
   sizePreview.textContent = selectedSizeText;
 
   //paper type -------------------------------------------------------
-  const paperType = document.getElementById("paper-type1");
-  let selectedPaperTypeText;
-  const paperTypePreview = document.getElementById("selected-paper-type");
-
-  if (paperType.options[paperType.selectedIndex].value) {
-    selectedPaperTypeText = paperType.options[paperType.selectedIndex].text;
-    paperTypePreview.style.color = "black";
-  } else {
-    selectedPaperTypeText = "Tipo de papel NAO selecionado";
-    paperTypePreview.style.color = "red";
-  }
-
-  paperTypePreview.textContent = selectedPaperTypeText;
+  updatePaperTypesAndAmounts();
 
   //cover color --------------------------------------------------------------
   const coverColor = document.getElementById("cover-color");
@@ -46,7 +34,6 @@ function updateSummary() {
   coverColorPreview.textContent = selectedCoverColorText;
 
   //------------------------------------------------
-  console.log(paperType.options[paperType.selectedIndex].value);
 }
 
 // Cria controle de Etapas
@@ -255,6 +242,48 @@ function updateDiffPapers(diffPapersAmount) {
         .querySelector(".papertypeSelector:nth-child(4)")
         .classList.remove("content");
       break;
+  }
+}
+
+let paperTypesAndAmounts = [];
+
+let paperTypes = document.querySelectorAll('[name="skecth-paper-type"]');
+let paperAmounts = document.querySelectorAll(".paperAmount");
+
+// console.log(paperTypes);
+// console.log(paperAmounts);
+
+//
+function updatePaperTypesAndAmounts() {
+  let paperType;
+  let selectedPaperTypeText;
+  let paperTypePreview;
+
+  let paperAmount;
+  let selectedPaperAmountText;
+  let paperAmountPreview;
+
+  for (i = 1; i <= 4; i++) {
+    paperType = document.getElementById(`paper-type${i}`);
+    paperTypePreview = document.getElementById(`selectedPaperType${i}`);
+
+    paperAmount = document.getElementById(`PaperAmount${i}`);
+    paperAmountPreview = document.getElementById(`selectedPaperAmount${i}`);
+
+    if (paperType.options[paperType.selectedIndex].value) {
+      selectedPaperTypeText = paperType.options[paperType.selectedIndex].text;
+      paperTypePreview.style.color = "black";
+
+      selectedPaperAmountText = paperAmount.value;
+    } else {
+      selectedPaperTypeText = "Tipo de papel NAO selecionado";
+      paperTypePreview.style.color = "red";
+
+      selectedPaperAmountText = "n";
+    }
+
+    paperTypePreview.textContent = selectedPaperTypeText;
+    paperAmountPreview.textContent = selectedPaperAmountText;
   }
 }
 

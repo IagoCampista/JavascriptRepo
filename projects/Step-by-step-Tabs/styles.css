@@ -38,7 +38,7 @@
 
 #paperSelectors {
   margin: auto;
-  width: 90vh;
+  width: 90%;
   display: flex;
   justify-content: space-between;
 }
