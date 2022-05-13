@@ -2,25 +2,51 @@
 function updateSummary() {
   // size
   const size = document.getElementById("size");
-  let selectedSizeText = size.options[size.selectedIndex].text;
-
+  let selectedSizeText;
   const sizePreview = document.getElementById("selected-size");
+  //checa se o valor selecionado para o tamanho existe (se nao foi selecionado (for null) vale como falsy)
+  //a.k.a. - Checa se foi selecionado
+  if (size.options[size.selectedIndex].value) {
+    selectedSizeText = size.options[size.selectedIndex].text;
+    sizePreview.style.color = "black";
+  } else {
+    selectedSizeText = "Tamanho NAO selecionado";
+    sizePreview.style.color = "red";
+  }
+
   sizePreview.textContent = selectedSizeText;
 
-  //paper type
-  const paperType = document.getElementById("paper-type");
-  let selectedPaperTypeText = paperType.options[paperType.selectedIndex].text;
-
+  //paper type -------------------------------------------------------
+  const paperType = document.getElementById("paper-type1");
+  let selectedPaperTypeText;
   const paperTypePreview = document.getElementById("selected-paper-type");
+
+  if (paperType.options[paperType.selectedIndex].value) {
+    selectedPaperTypeText = paperType.options[paperType.selectedIndex].text;
+    paperTypePreview.style.color = "black";
+  } else {
+    selectedPaperTypeText = "Tipo de papel NAO selecionado";
+    paperTypePreview.style.color = "red";
+  }
+
   paperTypePreview.textContent = selectedPaperTypeText;
 
-  //cover color
+  //cover color --------------------------------------------------------------
   const coverColor = document.getElementById("cover-color");
-  let selectedCoverColorText =
-    coverColor.options[coverColor.selectedIndex].text;
-
+  let selectedCoverColorText;
   const coverColorPreview = document.getElementById("selected-cover-color");
+  if (coverColor.options[coverColor.selectedIndex].value) {
+    selectedCoverColorText = coverColor.options[coverColor.selectedIndex].text;
+    coverColorPreview.style.color = "black";
+  } else {
+    selectedCoverColorText = "Cor da capa NAO selecionada";
+    coverColorPreview.style.color = "red";
+  }
+
   coverColorPreview.textContent = selectedCoverColorText;
+
+  //------------------------------------------------
+  console.log(paperType.options[paperType.selectedIndex].value);
 }
 
 // Cria controle de Etapas
