@@ -113,6 +113,7 @@ const stepsTitles = document.querySelectorAll(".stepTitle");
 function updateTitle(stepCounter) {
   switch (stepCounter) {
     case 0:
+      //Para ter certeza que nenhum indicador de passo está pintado com a cor de ativo
       stepsTitles.forEach(function (step) {
         step.classList.remove("blue");
       });
@@ -161,10 +162,74 @@ function updateTitle(stepCounter) {
     default:
   }
 }
+
 let diffPapersAmount = 0;
 function updateDiffPapers(diffPapersAmount) {
   document.getElementById("paper-amount-indicator").textContent =
     diffPapersAmount;
+
+  // transforma o valor de papeis diferentes selecionado em um numero - por padrao vem como string do formulario
+  diffPapersAmount = parseInt(diffPapersAmount);
+
+  switch (diffPapersAmount) {
+    case 1:
+      document
+        .querySelector(".papertypeSelector:nth-child(1)")
+        .classList.remove("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(2)")
+        .classList.add("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(3)")
+        .classList.add("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(4)")
+        .classList.add("content");
+
+      break;
+    case 2:
+      document
+        .querySelector(".papertypeSelector:nth-child(1)")
+        .classList.remove("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(2)")
+        .classList.remove("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(3)")
+        .classList.add("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(4)")
+        .classList.add("content");
+      break;
+    case 3:
+      document
+        .querySelector(".papertypeSelector:nth-child(1)")
+        .classList.remove("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(2)")
+        .classList.remove("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(3)")
+        .classList.remove("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(4)")
+        .classList.add("content");
+      break;
+    case 4:
+      document
+        .querySelector(".papertypeSelector:nth-child(1)")
+        .classList.remove("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(2)")
+        .classList.remove("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(3)")
+        .classList.remove("content");
+      document
+        .querySelector(".papertypeSelector:nth-child(4)")
+        .classList.remove("content");
+      break;
+  }
 }
 
 // updateTitle usando forEach em todas as ocasiões

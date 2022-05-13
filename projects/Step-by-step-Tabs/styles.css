@@ -36,3 +36,16 @@
   
 }
 
+#paperSelectors {
+  margin: auto;
+  width: 90vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+#btns{
+  margin: auto;
+    width: 30vh;
+    display: flex;
+    justify-content: space-around;
+}

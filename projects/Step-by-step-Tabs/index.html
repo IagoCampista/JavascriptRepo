@@ -83,14 +83,48 @@
         </p>
         <br />
 
-        <label for="paper-type">Papel do Miolo do Skecth:</label>
-        <select id="paper-type" name="skecth-paper-type">
-          <option value="" disabled selected>Papel do Miolo</option>
-          <option value="Papel Reciclado">Papel Reciclado</option>
-          <option value="Canson">Canson</option>
-          <option value="Papel Dourado">Papel Dourado</option>
-          <option value="Papel Pardo">Papel Pardo</option>
-        </select>
+        <div id="paperSelectors">
+          <div class="papertypeSelector Selector1 content">
+            <label for="paper-type">Tipo do Papel 1:</label>
+            <select id="paper-type" name="skecth-paper-type">
+              <option value="" disabled selected>Papel do Miolo</option>
+              <option value="Papel Reciclado">Papel Reciclado</option>
+              <option value="Canson">Canson</option>
+              <option value="Papel Dourado">Papel Dourado</option>
+              <option value="Papel Pardo">Papel Pardo</option>
+            </select>
+          </div>
+          <div class="papertypeSelector content">
+            <label for="paper-type">Tipo do Papel 2:</label>
+            <select id="paper-type" name="skecth-paper-type">
+              <option value="" disabled selected>Papel do Miolo</option>
+              <option value="Papel Reciclado">Papel Reciclado</option>
+              <option value="Canson">Canson</option>
+              <option value="Papel Dourado">Papel Dourado</option>
+              <option value="Papel Pardo">Papel Pardo</option>
+            </select>
+          </div>
+          <div class="papertypeSelector content">
+            <label for="paper-type">Tipo do Papel 3:</label>
+            <select id="paper-type" name="skecth-paper-type">
+              <option value="" disabled selected>Papel do Miolo</option>
+              <option value="Papel Reciclado">Papel Reciclado</option>
+              <option value="Canson">Canson</option>
+              <option value="Papel Dourado">Papel Dourado</option>
+              <option value="Papel Pardo">Papel Pardo</option>
+            </select>
+          </div>
+          <div class="papertypeSelector content">
+            <label for="paper-type">Tipo do Papel 4:</label>
+            <select id="paper-type" name="skecth-paper-type">
+              <option value="" disabled selected>Papel do Miolo</option>
+              <option value="Papel Reciclado">Papel Reciclado</option>
+              <option value="Canson">Canson</option>
+              <option value="Papel Dourado">Papel Dourado</option>
+              <option value="Papel Pardo">Papel Pardo</option>
+            </select>
+          </div>
+        </div>
       </div>
       <div class="steps step3 content">
         <label for="cover-color">Cor da Capa do Skecth:</label>
@@ -111,9 +145,10 @@
         </ul>
       </div>
     </form>
-
-    <button class="btn previous content">Etapa Anterior</button>
-    <button class="btn next">Próxima Etapa</button>
+    <div id="btns">
+      <button class="btn previous content">Etapa Anterior</button>
+      <button class="btn next">Próxima Etapa</button>
+    </div>
 
     <script src="app.js"></script>
   </body>
